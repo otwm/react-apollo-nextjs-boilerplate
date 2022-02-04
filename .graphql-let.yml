@@ -1,0 +1,11 @@
+schema: '**/*.graphqls'
+documents: '**/*.graphql'
+plugins:
+  - typescript
+  - typescript-operations
+  - typescript-react-apollo
+cacheDir: __generated__
+config:
+  namingConvention:
+    typeNames: pascal-case#pascalCase
+    enumValues: upper-case#upperCase
