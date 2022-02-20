@@ -1,14 +1,9 @@
-import React from 'react'
-import { useRestaurantsQuery } from '@generated/src/apollo/document/restaurantHome.graphql'
+import { useViewerQuery } from '~/apollo/viewer.graphql'
 
-const Home = () => {
-  const { loading, error, data } = useRestaurantsQuery({
-    variables: { restaurantSearch: { name: ''} }
-  })
-  console.log(loading, error, data)
-  return (
-    <div>1</div>
-  )
+const a = () => {
+  const { data, loading } = useViewerQuery()
+  console.log('data',data, loading)
+  return 1
 }
 
-export default Home
+export default a

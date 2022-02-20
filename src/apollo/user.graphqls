@@ -1,0 +1,9 @@
+type User {
+  id: ID!
+  name: String!
+  status: String!
+}
+
+extend type Query {
+  viewer: User!
+}
