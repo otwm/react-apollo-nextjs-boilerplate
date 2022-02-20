@@ -1,7 +1,7 @@
 const local = {
-  URL: 'https://xxxx.com',
+  URL: 'http://localhost:3000',
   PORT: 7777,
-  END_POINT: 'https://xxx.com/api/graphql',
+  END_POINT: 'http://localhost:3000/api/graphql',
   ENVIRONMENT: 'local',
   API: {
     RESTAURANT: {

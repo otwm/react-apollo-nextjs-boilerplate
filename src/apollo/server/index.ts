@@ -4,6 +4,7 @@ import dataSources from './datasources'
 import formatError from './utils/formatError'
 import context from './context/index'
 import schema from './schema'
+import loggingPlugin from './plugins/loggingPlugin'
 
 getEnv()
 
@@ -12,6 +13,7 @@ const graphVariant = process.env.APOLLO_GRAPH_VARIANT
 const apollo = { key, graphVariant }
 // const playground = process.env.NODE_ENV !== 'production'
 const plugins = [
+  loggingPlugin
 ]
 
 const apolloServer = new ApolloServer({

@@ -12,6 +12,15 @@ export default class RestaurantAPI extends RESTDataSource {
   }
 
   async restaurants(restaurantSearch) {
-    await this.get('/restaurants', restaurantSearch)
+    console.log(restaurantSearch)
+    return [{
+      id: 1,
+      name: 'a',
+      status: 'A',
+      address: {
+        address1: 'dd',
+      }
+    }]
+    // return await this.get('/restaurants', restaurantSearch)
   }
 }
