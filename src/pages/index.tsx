@@ -1,4 +1,4 @@
-import { useViewerQuery } from '~/apollo/viewer.graphql'
+import { useViewerQuery } from '~/apollo/document/viewer.graphql'
 
 const a = () => {
   const { data, loading } = useViewerQuery()
