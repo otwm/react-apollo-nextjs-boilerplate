@@ -1,9 +1,9 @@
-import { useViewerQuery } from '~/apollo/document/viewer.graphql'
+import { useViewerQuery } from '@generated/src/apollo/document/viewer.graphql'
 
-const a = () => {
+const Index = () => {
   const { data, loading } = useViewerQuery()
   console.log('data',data, loading)
   return 1
 }
 
-export default a
+export default Index

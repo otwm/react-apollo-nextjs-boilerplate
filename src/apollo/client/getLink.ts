@@ -4,7 +4,7 @@ import { sha256 } from 'crypto-hash'
 import { onError } from '@apollo/client/link/error'
 import { v4 as uuidv4 } from 'uuid'
 import ApolloLinkTimeout from 'apollo-link-timeout'
-import { version } from '../../../package.json'
+import version from '../../../package.json'
 import config from '~/config'
 
 const { END_POINT } = config
