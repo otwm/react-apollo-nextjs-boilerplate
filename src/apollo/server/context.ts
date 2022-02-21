@@ -5,7 +5,7 @@ const user = {
 }
 
 const context = async ({ req }) => {
-  console.log('context log req :', req)
+  console.log('context log req :', req.query)
   return {
     user
   }
