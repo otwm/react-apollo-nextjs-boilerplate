@@ -1,6 +1,6 @@
 const trackResolver = {
   Query: {
-    tracksForHome: async (
+    tracksForHome: (
       _, __, { dataSources },
     ) => dataSources.trackAPI.getTracksForHome(),
   },

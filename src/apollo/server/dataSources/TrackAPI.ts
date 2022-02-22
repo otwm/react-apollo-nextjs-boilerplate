@@ -12,7 +12,7 @@ export default class TrackAPI extends RESTDataSource {
     request.headers.set('X-Trace-Id', this.context.headers?.['x-transaction-id'])
   }
 
-  async getTracksForHome() {
+  getTracksForHome() {
     return this.get('/tracks')
   }
 
