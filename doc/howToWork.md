@@ -239,3 +239,10 @@ apollo 는 사실 micro service 기반에서 페더레이션이 지원되는 환
 아마도 apollo로나 nextjs 등에 전혀 익숙하지 않은 사람들을 위한 간단한 소개 정도의 느낌으로 다루었다.  
 더 자세한 것을 문서를 통해 확인하길 바란다.
 
+<img src="https://github.com/otwm/react-apollo-nextjs-boilerplate/blob/master/doc/single.png?raw=true" />  
+
+single
+
+<img src="https://github.com/otwm/react-apollo-nextjs-boilerplate/blob/master/doc/federation.png?raw=true" />  
+
+federation
