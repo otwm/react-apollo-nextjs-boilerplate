@@ -34,11 +34,11 @@
     },
     {
       "type": "revert",
-      "section": "Reverts",
+      "section": "Reverts"
     },
     {
       "type": "ci",
-      "section": "CI",
+      "section": "CI"
     }
   ]
 }
