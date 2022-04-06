@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/otwm/react-apollo-nextjs-boilerplate/compare/v1.0.0...v1.1.0) (2022-04-06)
+
+
+### Features
+
+* **ci:** add standard version ([f4c4150](https://github.com/otwm/react-apollo-nextjs-boilerplate/commit/f4c4150199c4abfff29748c4aa810ccacfe438dd))
+
 ## 1.0.0 (2022-03-24)
 
 
