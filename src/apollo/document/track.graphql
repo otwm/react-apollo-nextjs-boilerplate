@@ -11,3 +11,10 @@ query getTracks {
     }
   }
 }
+
+query getSimpleTrack {
+  tracksForHome {
+    id
+    title
+  }
+}
