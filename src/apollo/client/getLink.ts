@@ -1,4 +1,4 @@
-import { HttpLink, from } from '@apollo/client'
+import {HttpLink, from, Observable, FetchResult} from '@apollo/client'
 import { createPersistedQueryLink } from '@apollo/client/link/persisted-queries'
 import { sha256 } from 'crypto-hash'
 import { onError } from '@apollo/client/link/error'
@@ -6,28 +6,42 @@ import { v4 as uuidv4 } from 'uuid'
 import ApolloLinkTimeout from 'apollo-link-timeout'
 import version from '../../../package.json'
 import config from '~/config'
+import { GraphQLError } from 'graphql'
 
 const { END_POINT } = config
-const errorLink = onError(({
-  graphQLErrors, networkError, operation, forward,
-}) => {
+
+const errorLink = onError(({ graphQLErrors, networkError, operation, forward }) => {
   if (graphQLErrors) {
-    for (const err of graphQLErrors) {
-      switch (err.extensions?.code) {
-        case 'UNAUTHENTICATED':
-          // TODO: impl
-          return forward(operation)
-        default:
+    graphQLErrors.forEach((err: GraphQLError): void | Observable<FetchResult<Record<string, any>>> => {
+      // TODO: Error 처리
+      console.log('ERROR: ', err.extensions);
+
+      if (err.extensions?.code === 'UNAUTHENTICATED') {
+        console.log('UNAUTHENTICATED');
+        // 로그인으로 가야됨.
+        // why? 만료시간 이거나 유효하지 않는 token
+
+        // 권한이 없고 n초 후 로그인페이지로 이동합니다 안내창이 필요
+        // login(); // 바로 이동됨.. 왜 이동되는지 사용자가 모름..;;
+        return forward(operation);
+        // link 시킬 url 주소, 기본 메인 페이지로 redirect되어 페이지 권한처리로 이동 후 Login페이지로 이동
       }
-    }
+
+      if (err.extensions?.code === 'FORBIDDEN') {
+        console.log('FORBIDDEN');
+      }
+
+    });
   }
 
   if (networkError) {
-    console.error(`[Network error]: ${networkError}`)
+    console.error(`[Network error!!]: ${networkError}`);
   }
-})
+});
 
-const getHttpLink = ({ cookie }) => {
+
+
+const getHttpLink = ({ cookie }: { cookie: string| undefined }) => {
   const headers = {
     'x-transaction-id': uuidv4(),
     'client-name': 'order-admin',
