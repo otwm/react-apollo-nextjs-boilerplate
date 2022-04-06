@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/otwm/react-apollo-nextjs-boilerplate/compare/v1.1.1...v1.1.2) (2022-04-06)
+
+
+### Bug Fixes
+
+* add simple query and add ramda ([c7980d6](https://github.com/otwm/react-apollo-nextjs-boilerplate/commit/c7980d6dbf77e087a2ea995b06d56d4cb0a3ac59))
+
 ### [1.1.1](https://github.com/otwm/react-apollo-nextjs-boilerplate/compare/v1.1.0...v1.1.1) (2022-04-06)
 
 
